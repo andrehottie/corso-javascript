@@ -26,7 +26,7 @@ function getTotalImpressions(){
 }
 
 
-// GET ALL CLICKS
+/* GET ALL CLICKS
 function getTotalClicks(){
     var allclicks = 0;
     json.data.forEach(e => {
@@ -35,11 +35,13 @@ function getTotalClicks(){
 
     return allclicks;
 }
-
+*/ 
+/*
+// GET MEDIA CLICK
 function getClicksMedia(){
     return (getTotalClicks()/json.data.length);
 }
-
+*/
 function addClicks(arg1, arg2){
     var finalclicks = 0;
     json.data.forEach(e => {
@@ -94,20 +96,11 @@ function superPro(){
     var obj = {}; // Oggetto vuoto da riempire
     var x = 0; // Contatore per cambiare nome a elemento array
     var total = [];
-    
-
-------------------------------- PRIMO TENTATIVO    
-json.data[0].paid_views.forEach(e => {
-    total.push(e);
-    
-});
-
------------------------------  SECONDO TENTATIVO
 
     
 json.data.forEach(e => { // Primo ciclo per gli elementi dell'array "json.data[]"
 
-    obj[e + x] = e; // Creazione copia su obj{}
+    obj[e] = e; // Creazione copia su obj{}
 
     for (const key in e) {  //Secondo ciclo sulle proprietà di ogni elemento dell'array di prima.. quindi "json.data[e]"
         e.key = key;   // Creazione copia degli elementi, nella copia di prima
@@ -127,10 +120,10 @@ json.data.forEach(e => { // Primo ciclo per gli elementi dell'array "json.data[]
 });
 
 
-    return total;
+    return obj;
 }
-*/
 
+*/
 //Execution
 
 print(
@@ -142,11 +135,11 @@ print(
 );
 
 print(
-    getTotalClicks()
+    json.getTotalClicks()
 );
 
 print(
-    getClicksMedia()
+    json.getClicksMedia()
 );
 
 print(
@@ -156,4 +149,8 @@ print(
 print(
     viewStats()    
 );
-
+/*
+print(
+    superPro()
+);
+*/

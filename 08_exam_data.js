@@ -1,4 +1,17 @@
 var json = {
+    getTotalClicks: function(){
+        var allclicks = 0;
+        this.data.forEach(e => {
+            allclicks += e.clicks;        
+        });
+    
+        return allclicks;
+    },
+    getClickMedia: function(){
+        return (getTotalClicks()/this.data.length);
+    }
+
+
     data: [
         {
             "interactions": {
