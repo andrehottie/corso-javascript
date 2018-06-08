@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="The Mosaicoon platform uses data to make video content marketing simple and cost-effective." />
+    </head>
+    <body>
+        <h1>Site title</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque felis sit amet efficitur congue. Phasellus ut scelerisque sem. Ut ut aliquam nisl.</p>
+        
+        <ul id="options">
+            <li class="option">option 1</li>
+            <li class="option selected">option 2</li>
+            <li class="option selected">option 3</li>
+        </ul>
+        
+        <script>
+            /*
+                Ritorna tutte le opzioni disponibili
+
+                @returns: {
+                    data: ['option 1', 'option 2', ...]
+                }
+            */
+            function getOptions() {
+                var li = document.querySelectorAll("li");
+
+                return li;
+                
+            };
+
+            /*
+                Ritorna tutte le opzioni selezionate
+
+                @returns: {
+                    data: ['option 1', 'option 2', ...]
+                }
+            */
+            function getSelectedOptions() {
+
+                var li = document.querySelectorAll(".selected");
+                var selected = [];
+
+                li.forEach(e => {
+                    selected.push(e);                 
+                });
+
+                return selected;
+            }
+            
+            /*
+                Resetta tutte le opzioni rimuovendo 
+                la class 'selected'
+            */
+            function resetOptions() {
+                var li = document.querySelectorAll(".selected");
+                var selected = [];
+
+                li.forEach(e => {
+                    e.classList.remove("selected");                 
+                });
+
+            }
+            
+            /*
+                Resetta solo l'opzione, individuata dall'indice 'index',
+                rimuovendo la class 'selected'
+            */
+            function resetOption(index) {
+                var li = document.querySelectorAll("li");
+                var selected = [];
+
+                li[index].classList.remove("selected");
+
+            }
+        </script>
+    </body>
+</html>

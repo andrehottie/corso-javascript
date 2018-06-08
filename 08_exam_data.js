@@ -9,7 +9,7 @@ var json = {
     },
     getClickMedia: function(){
         return (getTotalClicks()/this.data.length);
-    }
+    },
 
 
     data: [
