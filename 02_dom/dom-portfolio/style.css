@@ -1,0 +1,141 @@
+body {
+    font-family: sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.l-page{
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: black;
+}
+
+.l-page-container {
+    margin: 0 auto;
+}
+
+.l-page-block{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 25px;
+}
+
+.l-page-block--noTopGutter {
+    padding-top: 0;
+}
+
+@media (min-width: 768px){
+    .l-page-block{
+        padding-left: 60px;
+        padding-right: 60px
+    }
+}
+
+@media (min-width: 1240px){
+    .l-page-block{
+        padding-left: 90px;
+        padding-right: 90px
+    }
+}
+
+/**
+ *  Header
+ */
+
+.Header {
+    background-color: tomato;
+}
+
+.Header a {
+    color: white;
+}
+
+.Header-container {
+    margin: 0 auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Header ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.Header-nav {
+
+}
+
+.Header-nav-el {
+    padding: 5px 5px 5px 0;
+}
+
+.Header-language {
+    padding-top: 6px;
+}
+
+@media (min-width: 768px){
+    .Header-nav {
+        width: calc(100% - 100px);
+    }
+
+    .Header-language {
+        width: 100px;
+        text-align: right;
+    }
+
+    .Header-nav-el {
+        padding: 10px;
+    }
+
+    .Header-nav-el:first-child {
+        padding-left: 0;
+    }
+
+    .Header-container {
+        flex-direction: row;
+    }
+
+    .Header ul {
+        flex-direction: row;
+    }
+}
+
+.PersonalInfos {
+    display: flex;
+}
+
+.PersonalInfos-skills {
+    font-size: 12px;
+    color: #CCC;
+    display: flex;
+    flex-direction: row;
+}
+
+.PersonalInfos-skills li {
+    padding-left: 5px;
+}
+
+.PersonalInfos img {
+    width: 100%;
+}
+
+.PersonalInfos-image {
+    width: 200px;
+}
+
+@media (min-width: 768px){
+    .PersonalInfos-image {
+        width: 200px;
+    }
+}
+
+.PersonalInfos-content {
+    flex: 1 1 0;
+    margin-left: 30px;
+}
