@@ -11,6 +11,7 @@
  */
 function printMenu(menu) {
     var menuEl = document.getElementById('menuEL');
+    menuEl.innerHTML="";
 
     var dataLength = menu.data.length;
 
@@ -51,6 +52,7 @@ function printPersonalInfos(personal) {
 
     //CREAZIONE ELEMENTI
     var personalEl = document.getElementById('personalEl');
+    personalEl.innerHTML="";
     var divimg = document.createElement("div"); // creo div img
     var divcon = document.createElement("div"); // creo div info
     var img = document.createElement("img"); // creo img
@@ -101,6 +103,7 @@ function printPersonalInfos(personal) {
 function printWorkExperience(work) {
     //CREAZIONE ELEMETI
     var workEl = document.getElementById('workEl');
+    workEl.innerHTML="";
     var h3 = document.createElement("h3");
     var divcon = document.createElement("div");
     var divrow = document.createElement("div");
@@ -129,13 +132,55 @@ function printWorkExperience(work) {
                 
     });
 
+    // var el = document.querySelector("button");
+
+    // el.addEventListener("click", function(e){
+    //     console.log(e.target);
+    //     console.log(e.type);
+
+    //     e.preventDefault();
+    // });
 
 
-
-
+    // -------------------------------------------    esercizio work experience
 
     // implementation here
+
+var workselect = document.querySelector("#work-select");
+    
+var form = document.querySelector("form");
+var in1 = document.querySelector("#title");
+var in2 = document.querySelector("#description");
+
+form.addEventListener("submit", function(e){
+    var selectel = document.createElement("option");
+    e.preventDefault();
+
+    var nuovoobj = {
+        title: in1.value,
+        description: in2.value
+    }
+    
+    var push = api.en.works.data.push(nuovoobj);
+    selectel.value = ((push)-1);
+    selectel.textContent = "Work: " + ((push)-1);
+    workselect.appendChild(selectel); 
+
+});
+
+workselect.addEventListener("change", function(e){
+
+    var indice = e.target.value;
+
+    // MODIFICARE H4 E P!!!!!!!!!!!
+});
+
+
+
+
 }
+
+
 
 // VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
 // VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
