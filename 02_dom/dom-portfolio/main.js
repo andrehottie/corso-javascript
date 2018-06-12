@@ -163,16 +163,33 @@ form.addEventListener("submit", function(e){
     
     var push = api.en.works.data.push(nuovoobj);
     selectel.value = ((push)-1);
-    selectel.textContent = "Work: " + ((push)-1);
+    selectel.textContent = "Work: " + (nuovoobj.title);
     workselect.appendChild(selectel); 
+    
 
 });
+
+for (let index = 0; index < work.data.length; index++) {
+    var selectel = document.createElement("option");
+    selectel.value = (index);
+    selectel.textContent = "Work: " + (work.data[index].title);
+    workselect.appendChild(selectel); 
+    
+    
+}
+
 
 workselect.addEventListener("change", function(e){
 
     var indice = e.target.value;
 
-    // MODIFICARE H4 E P!!!!!!!!!!!
+    var h4 = document.querySelector(".WorkExperience-row h4");
+    var p = document.querySelector(".WorkExperience-row p");
+
+    h4.innerHTML = work.data[indice].title;
+    p.innerHTML = work.data[indice].description;
+
+
 });
 
 
